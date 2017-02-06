@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha"
+    "test": "mocha",
+    "knex": "knex",
+    "heroku-postbuild": "knex migrate:latest"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +16,12 @@
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
+    "humps": "^2.0.0",
     "knex": "^0.12.6",
-    "pg": "^6.1.0",
-    "request": "^2.79.0"
+    "pg": "^6.1.0"
+  },
+  "engines": {
+    "node": "^7.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
