@@ -69,8 +69,15 @@ $(document).ready(function() {
       contentType: "application/json",
       dataType: "json",
       data: JSON.stringify(body)
-    }).done(function() {
+    }).done(function(data) {
       console.log('Item Posted!');
+      $display.empty();
+      $display.append(
+        `<tr>
+          <td>${data.name}</td>
+          <td>${data.message}</td>
+        </tr>`
+      );
     });
   });
 
